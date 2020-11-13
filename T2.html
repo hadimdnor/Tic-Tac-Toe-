@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>TIC-TAC-TOE-2</title>
+    <style>
+        .board{ 
+
+            height: 320px;
+            width: 320px;
+            margin: auto;
+            margin-top: 100px;
+            display: inline-block
+           
+          
+            
+
+        } 
+        .class:hover{
+            background-color: lightblue;
+        }
+        
+        h1{
+            color:rgb(10, 10, 11, .9);
+            text-align: center;
+            font-size: 50px;
+            display: inline block;
+
+         
+        }
+        .board2{
+            height: 320px;
+            width: 320px;
+            margin: auto;
+            margin-top: 100px;
+            display: grid;
+            grid-template-columns: repeat(3, auto);
+
+           
+        }
+        .class{
+            height: 100px;
+            width: 100px;
+            border: 1px solid black;
+            display: grid;
+            padding: 0;
+
+        }
+
+        .player1 {
+            background-color: red;
+        }
+        .player2 {
+            background-color: black;
+        }
+
+        .winning-message{
+            font-size: 2rem;
+            color: black;
+            text-align: center;
+          
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="board" >
+        <h1>Tic Tac Toe</h1>
+        <div class="winning-message"></div>
+        <div class="board2">
+            <div class="class" id="class1"></div>
+            <div class="class" id="class2"></div>
+            <div class="class" id="class3"></div>
+            <div class="class" id="class4"></div>
+            <div class="class" id="class5"></div>
+            <div class="class" id="class6"></div>
+            <div class="class" id="class7"></div>
+            <div class="class" id="class8"></div>
+            <div class="class" id="class9"></div>
+        </div>
+            
+    </div>
+    <script>
+        
+        const box1 = document.querySelector("#class1")
+        const box2 = document.querySelector("#class2")
+        const box3 = document.querySelector("#class3")
+        const box4 = document.querySelector("#class4")
+        const box5 = document.querySelector("#class5")
+        const box6 = document.querySelector("#class6")
+        const box7 = document.querySelector("#class7")
+        const box8 = document.querySelector("#class8")
+        const box9 = document.querySelector("#class9")
+        const winningMessage = document.querySelector(".winning-message")
+        var n = 0
+        
+        box1.addEventListener("click",function(event){
+            var box = event.target
+            if (n % 2 == 0) {
+                box.style.background ="red"
+            } else if (n % 2 == 1) {
+                box.style.background ="blue"
+            }  
+            
+            if (box1.style.background == "red" && 
+                box2.style.background == "red" && 
+                box3.style.background == "red"){
+                winningMessage.textContent = "Red Win"
+            }
+            if (box1.style.background == "red" && 
+                box4.style.background == "red" && 
+                box7.style.background == "red"){
+                winningMessage.textContent = "Red Win"
+            }
+            if (box1.style.background == "red" && 
+                box5.style.background == "red" && 
+                box9.style.background == "red"){
+                winningMessage.textContent = "Red Win"
+            }
+            if (box1.style.background == "blue" && 
+                box2.style.background == "blue" && 
+                box3.style.background == "blue"){
+                winningMessage.textContent = "Blue Win"
+            }
+            if (box1.style.background == "blue" && 
+                box4.style.background == "blue" && 
+                box7.style.background == "blue"){
+                winningMessage.textContent = "Blue Win"
+            }
+            if (box1.style.background == "blue" && 
+                box5.style.background == "blue" && 
+                box9.style.background == "blue"){
+                winningMessage.textContent = "Blue Win"
+            }
+            n = n + 1
+        })
+       
+        box2.addEventListener("click",function(event){
+            var box = event.target
+            if (n % 2 == 0) {
+                box.style.background ="red"
+            } else if (n % 2 == 1) {
+                box.style.background ="blue"
+            }
+            if (box1.style.background == "red" && 
+                box2.style.background == "red" && 
+                box3.style.background == "red"){
+                winningMessage.textContent = "Red Win"
+            }
+            if (box2.style.background == "red" && 
+                box5.style.background == "red" && 
+                box8.style.background == "red"){
+                winningMessage.textContent = "Red Win"
+            }
+            if (box1.style.background == "blue" && 
+                box2.style.background == "blue" && 
+                box3.style.background == "blue"){
+                winningMessage.textContent = "Red Win"
+            }
+            if (box2.style.background == "blue" && 
+                box5.style.background == "blue" && 
+                box8.style.background == "blue"){
+                winningMessage.textContent = "Red Win"
+            }
+            n = n + 1
+        })
+        
+        box3.addEventListener("click",function(event){
+            var box = event.target
+            if (n % 2 == 0) {
+                box.style.background ="red"
+            } else if (n % 2 == 1) {
+                box.style.background ="blue"
+            }
+            if (box1.style.background == "red" && 
+                box2.style.background == "red" && 
+                box3.style.background == "red"){
+                winningMessage.textContent = "Red Win"
+            }
+            if (box3.style.background == "red" && 
+                box6.style.background == "red" && 
+                box9.style.background == "red"){
+                winningMessage.textContent = "Red Win"
+            }
+            if (box3.style.background == "red" && 
+                box5.style.background == "red" && 
+                box7.style.background == "red"){
+                winningMessage.textContent = "Red Win"
+            }
+            if (box1.style.background == "blue" && 
+                box2.style.background == "blue" && 
+                box3.style.background == "blue"){
+                winningMessage.textContent = "Blue Win"
+            }
+            if (box3.style.background == "blue" && 
+                box6.style.background == "blue" && 
+                box9.style.background == "blue"){
+                winningMessage.textContent = "Blue Win"
+            }
+            if (box3.style.background == "blue" && 
+                box5.style.background == "blue" && 
+                box7.style.background == "blue"){
+                winningMessage.textContent = "Blue Win"
+            }
+            n = n + 1
+        })
+        
+        box4.addEventListener("click",function(event){
+            var box = event.target
+            if (n % 2 == 0) {
+                box.style.background ="red"
+            } else if (n % 2 == 1) {
+                box.style.background ="blue"
+            }
+            if (box4.style.background == "red" && 
+                box5.style.background == "red" && 
+                box6.style.background == "red"){
+                winningMessage.textContent = "Red Win"
+            }
+            if (box1.style.background == "red" && 
+                box4.style.background == "red" && 
+                box7.style.background == "red"){
+                winningMessage.textContent = "Red Win"
+            }
+            if (box4.style.background == "blue" && 
+                box5.style.background == "blue" && 
+                box6.style.background == "blue"){
+                winningMessage.textContent = "Blue Win"
+            }
+            if (box1.style.background == "blue" && 
+                box4.style.background == "blue" && 
+                box7.style.background == "blue"){
+                winningMessage.textContent = "Blue Win"
+            }
+            n = n + 1
+        })
+
+        box5.addEventListener("click",function(event){
+            var box = event.target
+            if (n % 2 == 0) {
+                box.style.background ="red"
+            } else if (n % 2 == 1) {
+                box.style.background ="blue"
+            }
+            if (box1.style.background == "red" && 
+                box5.style.background == "red" && 
+                box9.style.background == "red"){
+                winningMessage.textContent = "Red Win"
+            }
+            if (box2.style.background == "red" && 
+                box5.style.background == "red" && 
+                box8.style.background == "red"){
+                winningMessage.textContent = "Red Win"
+            }
+            if (box3.style.background == "red" && 
+                box5.style.background == "red" && 
+                box7.style.background == "red"){
+                winningMessage.textContent = "Red Win"
+            }
+            if (box4.style.background == "red" && 
+                box5.style.background == "red" && 
+                box6.style.background == "red"){
+                winningMessage.textContent = "Red Win"
+            }
+            if (box1.style.background == "blue" && 
+                box5.style.background == "blue" && 
+                box9.style.background == "blue"){
+                winningMessage.textContent = "Blue Win"
+            }
+            if (box2.style.background == "blue" && 
+                box5.style.background == "blue" && 
+                box8.style.background == "blue"){
+                winningMessage.textContent = "Blue Win"
+            }
+            if (box3.style.background == "blue" && 
+                box5.style.background == "blue" && 
+                box7.style.background == "blue"){
+                winningMessage.textContent = "Blue Win"
+            }
+            if (box4.style.background == "blue" && 
+                box5.style.background == "blue" && 
+                box6.style.background == "blue"){
+                winningMessage.textContent = "Blue Win"
+            }
+            n = n + 1
+        })
+
+        box6.addEventListener("click",function(event){
+            var box = event.target
+            if (n % 2 == 0) {
+                box.style.background ="red"
+            } else if (n % 2 == 1) {
+                box.style.background ="blue"
+            }
+            if (box3.style.background == "red" && 
+                box6.style.background == "red" && 
+                box9.style.background == "red"){
+                winningMessage.textContent = "Red Win"
+            }
+            if (box4.style.background == "red" && 
+                box5.style.background == "red" && 
+                box6.style.background == "red"){
+                winningMessage.textContent = "Red Win"
+            }
+            if (box3.style.background == "blue" && 
+                box6.style.background == "blue" && 
+                box9.style.background == "blue"){
+                winningMessage.textContent = "Blue Win"
+            }
+            if (box4.style.background == "blue" && 
+                box5.style.background == "blue" && 
+                box6.style.background == "blue"){
+                winningMessage.textContent = "Blue Win"
+            }
+            n = n + 1
+        })
+    
+
+        box7.addEventListener("click",function(event){
+            var box = event.target
+            if (n % 2 == 0) {
+                box.style.background ="red"
+            } else if (n % 2 == 1) {
+                box.style.background ="blue"
+            }
+            if (box1.style.background == "red" && 
+                box4.style.background == "red" && 
+                box7.style.background == "red"){
+                winningMessage.textContent = "Red Win"
+            }
+            if (box7.style.background == "red" && 
+                box5.style.background == "red" && 
+                box3.style.background == "red"){
+                winningMessage.textContent = "Red Win"
+            }
+            if (box7.style.background == "red" && 
+                box8.style.background == "red" && 
+                box9.style.background == "red"){
+                winningMessage.textContent = "Red Win"
+            }
+            if (box1.style.background == "blue" && 
+                box4.style.background == "blue" && 
+                box7.style.background == "blue"){
+                winningMessage.textContent = "Blue Win"
+            }
+            if (box7.style.background == "blue" && 
+                box5.style.background == "blue" && 
+                box3.style.background == "blue"){
+                winningMessage.textContent = "Blue Win"
+            }
+            if (box7.style.background == "blue" && 
+                box8.style.background == "blue" && 
+                box9.style.background == "blue"){
+                winningMessage.textContent = "Blue Win"
+            }
+            n = n + 1
+        })
+
+        box8.addEventListener("click",function(event){
+            var box = event.target
+            if (n % 2 == 0) {
+                box.style.background ="red"
+            } else if (n % 2 == 1) {
+                box.style.background ="blue"
+            }
+            if (box2.style.background == "red" && 
+                box5.style.background == "red" && 
+                box8.style.background == "red"){
+                winningMessage.textContent = "Red Win"
+            }
+            if (box7.style.background == "red" && 
+                box8.style.background == "red" && 
+                box9.style.background == "red"){
+                winningMessage.textContent = "Red Win"
+            }
+            if (box2.style.background == "blue" && 
+                box5.style.background == "blue" && 
+                box8.style.background == "blue"){
+                winningMessage.textContent = "Blue Win"
+            }
+            if (box7.style.background == "blue" && 
+                box8.style.background == "blue" && 
+                box9.style.background == "blue"){
+                winningMessage.textContent = "Blue Win"
+            }
+            n = n + 1
+        })
+        
+        box9.addEventListener("click",function(event){
+            var box = event.target
+            if (n % 2 == 0) {
+                box.style.background ="red"
+            } else if (n % 2 == 1) {
+                box.style.background ="blue"
+            }
+            if (box1.style.background == "red" && 
+                box5.style.background == "red" && 
+                box9.style.background == "red"){
+                winningMessage.textContent = "Red Win"
+            }
+            if (box3.style.background == "red" && 
+                box6.style.background == "red" && 
+                box9.style.background == "red"){
+                winningMessage.textContent = "Red Win"
+            }
+            if (box7.style.background == "red" && 
+                box8.style.background == "red" && 
+                box9.style.background == "red"){
+                winningMessage.textContent = "Red Win"
+            }
+            if (box1.style.background == "blue" && 
+                box5.style.background == "blue" && 
+                box9.style.background == "blue"){
+                winningMessage.textContent = "Blue Win"
+            }
+            if (box3.style.background == "blue" && 
+                box6.style.background == "blue" && 
+                box9.style.background == "blue"){
+                winningMessage.textContent = "Blue Win"
+            }
+            if (box7.style.background == "blue" && 
+                box8.style.background == "blue" && 
+                box9.style.background == "blue"){
+                winningMessage.textContent = "Blue Win"
+            }
+            n = n + 1
+        })
+
+       
+        // console.log("this line of code run now")
+        
+
+        
+
+        
+        
+       
+    
+    
+        
+
+
+    
+
+    </script>
+</body>
+</html>
